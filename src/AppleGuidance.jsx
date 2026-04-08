@@ -39,8 +39,9 @@ const AppleGuidance = () => {
         <nav className="apple-nav">
           <a href="#hero" onClick={(e) => scrollToSection(e, 'apple-hero')}>Overview</a>
           <a href="#vision" onClick={(e) => scrollToSection(e, 'vision')}>Vision</a>
-          <a href="#pillars" onClick={(e) => scrollToSection(e, 'pillars')}>The Pillars</a>
-          <a href="#redteam" onClick={(e) => scrollToSection(e, 'redteam')}>Red Team & AI</a>
+          <a href="#pillars" onClick={(e) => scrollToSection(e, 'pillars')}>Pillars</a>
+          <a href="#paradigm" onClick={(e) => scrollToSection(e, 'paradigm')}>Paradigm</a>
+          <a href="#redteam" onClick={(e) => scrollToSection(e, 'redteam')}>Red Team</a>
           <a href="#physicality" onClick={(e) => scrollToSection(e, 'physicality')}>Physicality</a>
         </nav>
       </header>
@@ -77,6 +78,22 @@ const AppleGuidance = () => {
             <div className="card reveal">
               <h3>対話</h3>
               <p>他者との議論、そして過去の知性との対話を通じて、思考を鋭く研ぎ澄ます。</p>
+            </div>
+          </div>
+        </section>
+
+        {/* New Paradigm Section */}
+        <section id="paradigm" className="container" style={{ padding: '100px 20px', background: 'rgba(0,102,204,0.03)', borderRadius: '40px', margin: '40px auto' }}>
+          <h2 className="title-large reveal">New Paradigm: 伴走と対話</h2>
+          <p className="subtitle reveal">昨日までの「論文」を、軽々と超えるために。</p>
+          <div className="grid">
+            <div className="card reveal" style={{ border: 'none', background: 'transparent' }}>
+              <h3 style={{ fontSize: '1.4rem', color: 'var(--secondary-text)' }}>これまで</h3>
+              <p style={{ fontSize: '1.1rem', color: 'var(--text-color)' }}>教員からの「指導」を受けながら、一人で調べ、書き上げるプロセス。</p>
+            </div>
+            <div className="card reveal" style={{ border: 'none', background: 'transparent' }}>
+              <h3 style={{ fontSize: '1.4rem', color: '#0066cc' }}>今年度</h3>
+              <p style={{ fontSize: '1.1rem', color: 'var(--text-color)' }}>教員が「伴走」し、生成AIとの「対話」を通じて、多角的な視点から自分の真の関心（Core Issue）を掘り下げる。自分たちが本当に解決したい課題を見つけ、自分たちなりの答えを導き出す共創のプロセスへ。</p>
             </div>
           </div>
         </section>
