@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './index.css';
+import AppleGuidance from './AppleGuidance';
 
-function App() {
+function Home() {
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -38,6 +40,11 @@ function App() {
           <p className="subtitle">
             約束された場所で、あえて困難を選ぶ意味。
           </p>
+          <div style={{ marginTop: '2rem' }}>
+            <Link to="/apple-style" className="apple-btn">
+              探究論文特別ガイダンス（Apple Style）を見る
+            </Link>
+          </div>
         </div>
         <div className="scroll-indicator">
           <span>Scroll down</span>
@@ -124,7 +131,7 @@ function App() {
           <p>
             今年度の終わりに、皆さんの姿を見て、私が「負けた」と思わされることを願っている。
           </p>
-          <div className="reflection-box" style={{ borderLeftColor: 'var(--accent-secondary)' }}>
+          <div className="reflection-box" style={{ borderLeftColor: '#0071e3' }}>
             <p className="strong-text" style={{ fontSize: '1.2rem' }}>
               「28期生はなんと尊敬すべき集団か」と私に言わせてほしい。<br />
               私の過去を、軽々と超えていけ。
@@ -137,6 +144,17 @@ function App() {
         <p>© 2026 Guidance for 28th Generation Students</p>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/apple-style" element={<AppleGuidance />} />
+      </Routes>
+    </Router>
   );
 }
 

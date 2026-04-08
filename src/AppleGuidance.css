@@ -1,0 +1,160 @@
+/* Apple Style Design System for Guidance Subpage */
+.apple-guidance {
+  --bg-color: #fbfbfd;
+  --text-color: #1d1d1f;
+  --accent-color: #0066cc;
+  --secondary-text: #86868b;
+  --card-bg: #ffffff;
+  --nav-bg: rgba(251, 251, 253, 0.8);
+  --header-height: 44px;
+  --section-padding: 80px 20px;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.apple-guidance * {
+  box-sizing: border-box;
+}
+
+/* Typography */
+.apple-guidance .title-large {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+}
+
+.apple-guidance .subtitle {
+  font-size: 24px;
+  color: var(--secondary-text);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Layout */
+.apple-guidance .container {
+  max-width: 980px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.apple-guidance .apple-header {
+  height: var(--header-height);
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apple-guidance .apple-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 12px;
+  opacity: 0.8;
+  margin: 0 20px;
+  transition: opacity 0.3s;
+}
+
+.apple-guidance .apple-nav a:hover {
+  opacity: 1;
+}
+
+/* Sections */
+.apple-guidance section {
+  padding: var(--section-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.apple-guidance .apple-hero {
+  padding-top: 80px;
+  min-height: 70vh;
+  justify-content: center;
+}
+
+.apple-guidance .gradient-text {
+  background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cards */
+.apple-guidance .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.apple-guidance .card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: left;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.apple-guidance .card:hover {
+  transform: scale(1.02);
+}
+
+.apple-guidance .card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.apple-guidance .card p {
+  color: var(--secondary-text);
+  font-size: 17px;
+}
+
+/* Dark Mode Hint (Auto) */
+@media (prefers-color-scheme: dark) {
+  .apple-guidance {
+    --bg-color: #000000;
+    --text-color: #f5f5f7;
+    --secondary-text: #a1a1a6;
+    --card-bg: #1c1c1e;
+    --nav-bg: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Animation utilities - these should be used with Reveal component or IntersectionObserver */
+.apple-guidance .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.apple-guidance .reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .apple-guidance .title-large {
+    font-size: 40px;
+  }
+  .apple-guidance .subtitle {
+    font-size: 19px;
+  }
+}
